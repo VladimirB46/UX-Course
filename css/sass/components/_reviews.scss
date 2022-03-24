@@ -1,8 +1,11 @@
 .reviews-slider {
     padding-top: 70px;
+    max-height: 500px;
+    overflow: hidden;
 
     @include respond-to(media-large-medium) {
         padding-top: 40px;
+        max-height: 470px;
     }
     div {
         transition: none;
