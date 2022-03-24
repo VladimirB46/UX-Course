@@ -1,6 +1,6 @@
 'use strict'
 document.addEventListener('DOMContentLoaded', function() {
-    // menu
+    // side menu
     const menuBtn = document.querySelector('.header__menu-btn');
     const sideMenu = document.querySelector('.side-menu');
     menuBtn.onclick = () => {
