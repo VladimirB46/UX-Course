@@ -1,0 +1,912 @@
+gitpg<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>UX Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="favicon.png" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="css/style.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/5603326328.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="wrapper">
+                <a href="index.html" class="header__logo">
+                    <img src="img/logo.png" alt="" />
+                </a>
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="/#" class="active"><span>home</span></a>
+                        </li>
+                        <li>
+                            <a href="/#"> <span>about</span> </a>
+                        </li>
+                        <li>
+                            <a href="/#"> <span>courses</span> </a>
+                        </li>
+                        <li>
+                            <a href="/#"> <span>blog</span> </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__right">
+                    <button
+                        class="show-login-btn white-btn--small loged-out-content"
+                    >
+                        log in
+                    </button>
+                    <div class="header__profile-photo loged-in-content">
+                        <img
+                            src="img/user.png"
+                            alt=""
+                            class="profile-picture"
+                        />
+                    </div>
+                    <button class="header__menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <button class="scroll-to-top-btn">
+                <i class="fas fa-angle-up"></i>
+            </button>
+            <div class="overlay"></div>
+            <div class="side-menu">
+                <div class="side-menu__top">
+                    <div class="side-menu__top__container loged-out-content">
+                        <div class="side-menu__profile-picture">
+                            <img src="img/guest-icon.png" alt="" />
+                        </div>
+                        <p class="side-menu__text--normal">
+                            You are not loged in!
+                        </p>
+                        <button
+                            class="purple-btn purple-btn--wide show-login-btn"
+                        >
+                            log in
+                        </button>
+                    </div>
+                    <div class="side-menu__top__container loged-in-content">
+                        <div class="side-menu__profile-picture">
+                            <img src="img/user.png" alt="" />
+                        </div>
+                        <p class="side-menu__text--normal username"></p>
+                        <a href="/#" class="purple-btn purple-btn--wide">
+                            Account settings
+                        </a>
+                    </div>
+                    <div class="side-menu__nav">
+                        <ul>
+                            <li>
+                                <a href="/#" class="active"
+                                    ><span>home</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="/#"> <span>about</span> </a>
+                            </li>
+                            <li>
+                                <a href="/#"> <span>courses</span> </a>
+                            </li>
+                            <li>
+                                <a href="/#"> <span>blog</span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="side-menu__bottom">
+                    <button
+                        class="loged-out-content transparent-btn transparent-btn--wide show-registration-btn"
+                    >
+                        Register
+                    </button>
+                    <button
+                        class="loged-in-content transparent-btn transparent-btn--wide show-log-out"
+                    >
+                        <i class="fas fa-sign-out-alt"></i>
+                        log out
+                    </button>
+                </div>
+            </div>
+            <div class="login-reg-modal">
+                <button
+                    class="login-reg-modal__close-btn close-login-reg-modal-btn"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- login -->
+                <div
+                    class="login-reg-modal__content login-reg-modal__content--login"
+                >
+                    <h3 class="login-reg-modal__title">Login</h3>
+                    <form class="login-form">
+                        <label for="name" class="login-reg-modal__label"
+                            >Enter your username</label
+                        >
+                        <input
+                            class="login-reg-modal__input name"
+                            type="text"
+                            name="name"
+                            spellcheck="false"
+                        />
+                        <span
+                            class="login-reg-modal__error-msg name-error-msg"
+                        ></span>
+                        <label for="password" class="login-reg-modal__label"
+                            >Enter your password</label
+                        >
+                        <div class="password-and-show-btn">
+                            <input
+                                class="login-reg-modal__input password"
+                                type="password"
+                                name="password"
+                                spellcheck="false"
+                            />
+                            <button class="show-passowrd-btn" type="button">
+                                <i class="fas fa-eye icon--show"></i>
+                                <i class="fas fa-eye-slash icon--hide"></i>
+                            </button>
+                        </div>
+                        <span
+                            class="login-reg-modal__error-msg password-error-msg"
+                        ></span>
+                        <button
+                            class="rounded-purple-btn login-btn"
+                            type="button"
+                        >
+                            Login
+                        </button>
+                        <p
+                            class="login-reg-modal__error-msg login-error-msg"
+                        ></p>
+                    </form>
+                    <div class="show-registration-container">
+                        <span>Don't hvae an account?</span>
+                        <button class="show-registration-btn">Register!</button>
+                    </div>
+                </div>
+                <!-- register -->
+                <div
+                    class="login-reg-modal__content login-reg-modal__content--register"
+                >
+                    <h3 class="login-reg-modal__title">Register</h3>
+                    <form class="register-form">
+                        <label for="name" class="login-reg-modal__label"
+                            >Enter your username</label
+                        >
+                        <input
+                            class="login-reg-modal__input name"
+                            type="text"
+                            name="name"
+                            spellcheck="false"
+                        />
+                        <span
+                            class="login-reg-modal__error-msg name-error-msg"
+                        ></span>
+                        <label for="password" class="login-reg-modal__label"
+                            >Enter your password</label
+                        >
+                        <div class="password-and-show-btn">
+                            <input
+                                class="login-reg-modal__input login-reg-modal__input--small-margin password"
+                                type="password"
+                                name="password"
+                                spellcheck="false"
+                            />
+                            <button class="show-passowrd-btn" type="button">
+                                <i class="fas fa-eye icon--show"></i>
+                                <i class="fas fa-eye-slash icon--hide"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength-container">
+                            <div class="passowrd-strength-icons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="password-strength"></span>
+                        </div>
+                        <span
+                            class="login-reg-modal__error-msg password-error-msg"
+                        ></span>
+                        <label
+                            for="confirm-password"
+                            class="login-reg-modal__label"
+                            >Confirm your password</label
+                        >
+                        <input
+                            class="login-reg-modal__input confirm-password"
+                            type="password"
+                            name="confirm-password"
+                            spellcheck="false"
+                        />
+                        <span
+                            class="login-reg-modal__error-msg confirm-password-error-msg"
+                        ></span>
+                        <button
+                            class="rounded-purple-btn register-btn"
+                            type="button"
+                        >
+                            register
+                        </button>
+                    </form>
+                    <div class="show-registration-container">
+                        <span>Already hvae an account?</span>
+                        <button class="show-login-btn">Login!</button>
+                    </div>
+                </div>
+                <!-- success -->
+                <div
+                    class="login-reg-modal__content login-reg-modal__content--success"
+                >
+                    <div class="login-reg-modal__success-icon">
+                        <svg
+                            id="Layer_3"
+                            data-name="Layer 3"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 60 63.06"
+                            class="checkmark-svg"
+                        >
+                            <path
+                                class="cls-1 checkmark-path"
+                                d="M11.76,38.33,27.88,59.76,59.76,8.7"
+                                transform="translate(-5.76 -2.7)"
+                            />
+                        </svg>
+                    </div>
+                    <p class="login-reg-modal__success-messsage">
+                        <span
+                            class="login-reg-modal__success-messsage__element"
+                        ></span>
+                        was successful!
+                    </p>
+                </div>
+                <!-- log out -->
+                <div
+                    class="login-reg-modal__content login-reg-modal__content--logout"
+                >
+                    <h3 class="login-reg-modal__title">Log out?</h3>
+                    <div class="login-reg-modal__buttons-container">
+                        <button class="white-btn close-login-reg-modal-btn">
+                            cancel
+                        </button>
+                        <button class="purple-btn log-out-btn">log out</button>
+                    </div>
+                </div>
+            </div>
+            <section class="hero">
+                <div class="wrapper">
+                    <div class="hero__content">
+                        <div class="hero__left">
+                            <span class="cube"></span>
+                            <p>
+                                become a <br />
+                                pro-designer
+                            </p>
+                        </div>
+                        <div class="hero__center">
+                            <img src="img/crnac.png" alt="" />
+                        </div>
+                        <div class="hero__right">
+                            <h1 class="hero__title">
+                                start guide for beginner designers
+                            </h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore .
+                            </p>
+                            <div class="buttons-container">
+                                <a href="/#" class="purple-btn">let's start</a>
+                                <a href="/#" class="transparent-btn"
+                                    >read more</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__absolute-right edition-badge">
+                    <span>edition</span>
+                    <span>2022</span>
+                </div>
+                <div class="hero__absolute-left">
+                    <span class="text--humongous text--bold"
+                        >UX<span class="text--purple">.</span></span
+                    >
+                    <p
+                        class="hero__absolute-left__text-sideways sideways-text--left"
+                    >
+                        beginner's
+                    </p>
+                </div>
+            </section>
+            <section class="section-padding box-shadow--bottom">
+                <div class="wrapper">
+                    <div class="achievement-cards-container">
+                        <div class="achievement-card">
+                            <div class="achievement-card__left">
+                                <span class="text--purple">+</span>
+                                <span>250</span>
+                            </div>
+                            <div class="achievement-card__right">
+                                <span>happy</span>
+                                <span class="text--bold">students</span>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-card__left">
+                                <span class="text--purple">+</span>
+                                <span>75</span>
+                            </div>
+                            <div class="achievement-card__right">
+                                <span>certified</span>
+                                <span class="text--bold">courses</span>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-card__left">
+                                <span class="text--purple">+</span>
+                                <span>1000</span>
+                            </div>
+                            <div class="achievement-card__right">
+                                <span>awards</span>
+                                <span class="text--bold">received</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding position--relative">
+                <div class="wrapper">
+                    <div class="title-and-oval-behind">
+                        <h2 class="title--big text--center">
+                            accept
+                            <span class="text--regular">new</span>
+                            challenges
+                        </h2>
+                        <div class="oval-behind">
+                            <img src="img/oval-behind.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="texts-and-arrow">
+                    <span
+                        class="text--48px text--uppercase text--dark-grey text--bold"
+                        >explore</span
+                    >
+                    <div class="arrow-down">
+                        <img src="img/arrow-down.png" alt="" />
+                    </div>
+                    <span
+                        class="text--48px text--uppercase text--dark-grey text--bold"
+                        >about</span
+                    >
+                </div>
+                <p
+                    class="sideways-text--left white-cube-before absolute-text--top-left"
+                >
+                    discover your skills
+                </p>
+                <p
+                    class="sideways-text--right white-cube-before absolute-text--top-right"
+                >
+                    discover your skills
+                </p>
+            </section>
+            <section class="section-padding">
+                <div class="wrapper">
+                    <div class="title-and-badge-container">
+                        <h2 class="text--38px text--regular">
+                            <span class="title--huge">find</span> Your Course.
+                        </h2>
+                        <div class="edition-badge">
+                            <span class="white-cube-before">edition</span>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                    <div class="course-cards-container">
+                        <div class="course-card">
+                            <div class="course-card__number">
+                                <span>.01</span>
+                            </div>
+                            <div class="course-card__content">
+                                <h2 class="course-card__title">
+                                    course <span class="text--purple">01</span>
+                                </h2>
+                                <p class="course-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et.
+                                </p>
+                                <a href="/#" class="course-card__btn purple-btn"
+                                    >read more</a
+                                >
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-card__number">
+                                <span>.02</span>
+                            </div>
+                            <div class="course-card__content">
+                                <h2 class="course-card__title">
+                                    course <span class="text--purple">02</span>
+                                </h2>
+                                <p class="course-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et.
+                                </p>
+                                <a href="/#" class="course-card__btn purple-btn"
+                                    >read more</a
+                                >
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-card__number">
+                                <span>.03</span>
+                            </div>
+                            <div class="course-card__content">
+                                <h2 class="course-card__title">
+                                    course <span class="text--purple">03</span>
+                                </h2>
+                                <p class="course-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et.
+                                </p>
+                                <a href="/#" class="course-card__btn purple-btn"
+                                    >read more</a
+                                >
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-card__number">
+                                <span>.04</span>
+                            </div>
+                            <div class="course-card__content">
+                                <h2 class="course-card__title">
+                                    course <span class="text--purple">04</span>
+                                </h2>
+                                <p class="course-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et.
+                                </p>
+                                <a href="/#" class="course-card__btn purple-btn"
+                                    >read more</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container--center">
+                        <a href="/#" class="more-courses-btn text-and-arrow-btn"
+                            ><span>more courses</span>
+                            <img src="img/arrow-right.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding position--relative">
+                <div class="wrapper">
+                    <div class="text-and-image--right">
+                        <div class="text-and-image__text">
+                            <div class="text-and-image__text__container">
+                                <h2 class="title--58px">
+                                    About
+                                    <span class="text--regular text--purple"
+                                        >us.</span
+                                    >
+                                </h2>
+                                <div class="container--375px">
+                                    <p class="text--small text--bold">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua Quis ipsum suspendisse.
+                                    </p>
+                                </div>
+                                <div class="text-rows-container">
+                                    <div class="text-row">
+                                        <span
+                                            class="text--uppercase text--bold text--small purple-cube-before"
+                                            >lorem ipsum dolor.</span
+                                        >
+                                        <span
+                                            class="text--uppercase text--bold text--small purple-cube-before"
+                                            >lorem ipsum dolor.</span
+                                        >
+                                    </div>
+                                    <div class="text-row">
+                                        <span
+                                            class="text--uppercase text--bold text--small purple-cube-before"
+                                            >lorem ipsum dolor.</span
+                                        >
+                                        <span
+                                            class="text--uppercase text--bold text--small purple-cube-before"
+                                            >lorem ipsum dolor.</span
+                                        >
+                                    </div>
+                                </div>
+                                <a href="/#" class="purple-btn">read more</a>
+                            </div>
+                        </div>
+                        <div class="text-and-image__image">
+                            <div class="dot absolute--top-right"></div>
+                            <img src="img/crnac2.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute--top-left oval--top-left">
+                    <img src="img/oval-top-left.png" alt="" />
+                </div>
+                <div class="circle--bottom-center dot"></div>
+            </section>
+            <section class="section-padding position--relative">
+                <div class="wrapper">
+                    <div class="text-and-image--left">
+                        <div class="text-and-image__image">
+                            <img src="img/crnac3.png" alt="" />
+                        </div>
+                        <div class="text-and-image__text">
+                            <div class="text-and-image__text__container">
+                                <h2 class="title--58px">
+                                    Why
+                                    <span class="text--regular text--purple"
+                                        >us.</span
+                                    >
+                                </h2>
+                                <div class="container--375px">
+                                    <p class="text--small text--bold">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua Quis ipsum suspendisse.
+                                    </p>
+                                </div>
+                                <a href="/#" class="purple-btn">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="absolute--top-right transform--up-50perc oval--top-right"
+                >
+                    <img src="img/oval-top-right.png" alt="" />
+                </div>
+                <div class="absolute--right-center">
+                    <span class="side-text--big sideways-text--left"
+                        >explore</span
+                    >
+                </div>
+                <div class="circle--bottom-right dot"></div>
+            </section>
+            <section class="section-padding">
+                <div class="wrapper">
+                    <h2 class="text--center text--multiple-rows">
+                        <span class="title--big">what</span>
+                        <span class="text--purple text--38px text--regular"
+                            >users think.</span
+                        >
+                    </h2>
+                    <div class="reviews-slider">
+                        <div class="review-slide">
+                            <div class="review-slide__content">
+                                <div class="review-slide__picture">
+                                    <img src="img/review-person1.jpg" alt="" />
+                                </div>
+                                <h3 class="review-slide__name">laura smith</h3>
+                                <div class="review-slide__rating stars--4">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <p class="review-slide__text">
+                                    <span
+                                        class="review-slide__text__quotation-start"
+                                        >"</span
+                                    >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua
+                                    .
+                                    <span
+                                        class="review-slide__text__quotation-end"
+                                        >"</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-slide">
+                            <div class="review-slide__content">
+                                <div class="review-slide__picture">
+                                    <img src="img/review-person3.jpg" alt="" />
+                                </div>
+                                <h3 class="review-slide__name">john smith</h3>
+                                <div class="review-slide__rating stars--3">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <p class="review-slide__text">
+                                    <span
+                                        class="review-slide__text__quotation-start"
+                                        >"</span
+                                    >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua
+                                    .
+                                    <span
+                                        class="review-slide__text__quotation-end"
+                                        >"</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-slide">
+                            <div class="review-slide__content">
+                                <div class="review-slide__picture">
+                                    <img src="img/review-person2.jpg" alt="" />
+                                </div>
+                                <h3 class="review-slide__name">sarah smith</h3>
+                                <div class="review-slide__rating stars--5">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <p class="review-slide__text">
+                                    <span
+                                        class="review-slide__text__quotation-start"
+                                        >"</span
+                                    >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua
+                                    .
+                                    <span
+                                        class="review-slide__text__quotation-end"
+                                        >"</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-slide">
+                            <div class="review-slide__content">
+                                <div class="review-slide__picture">
+                                    <img src="img/review-person2.jpg" alt="" />
+                                </div>
+                                <h3 class="review-slide__name">emelia jones</h3>
+                                <div class="review-slide__rating stars--4">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <p class="review-slide__text">
+                                    <span
+                                        class="review-slide__text__quotation-start"
+                                        >"</span
+                                    >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua
+                                    .
+                                    <span
+                                        class="review-slide__text__quotation-end"
+                                        >"</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-slider-arrows">
+                        <button class="slider-arrow review-slider--previous">
+                            <svg
+                                id="Layer_2"
+                                data-name="Layer 2"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 59.01 24.41"
+                            >
+                                <defs>
+                                    <style>
+                                        .slider-arrow-path {
+                                            fill: none;
+                                            stroke-miterlimit: 10;
+                                        }
+                                    </style>
+                                </defs>
+                                <line
+                                    class="slider-arrow-path"
+                                    x1="1.6"
+                                    y1="11.98"
+                                    x2="59.01"
+                                    y2="11.98"
+                                />
+                                <polyline
+                                    class="slider-arrow-path"
+                                    points="13.66 23.68 1.46 11.98 13.66 0.73"
+                                />
+                            </svg>
+                        </button>
+                        <button class="slider-arrow review-slider--next">
+                            <svg
+                                id="Layer_2"
+                                data-name="Layer 2"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 59.01 24.41"
+                            >
+                                <defs>
+                                    <style>
+                                        .slider-arrow-path {
+                                            fill: none;
+                                            stroke-miterlimit: 10;
+                                        }
+                                    </style>
+                                </defs>
+                                <line
+                                    class="slider-arrow-path"
+                                    x1="57.41"
+                                    y1="11.98"
+                                    y2="11.98"
+                                />
+                                <polyline
+                                    class="slider-arrow-path"
+                                    points="45.35 23.68 57.55 11.98 45.35 0.73"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding position--relative">
+                <div class="wrapper">
+                    <div class="form-flex-container">
+                        <div class="form-container">
+                            <h2 class="form__title">
+                                <span>subscribe</span>
+                                <span>to our newsletter</span>
+                            </h2>
+                            <p class="form__text">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt .
+                            </p>
+                            <form class="form">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="name form__input"
+                                    placeholder="name"
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="email form__input"
+                                    placeholder="mail"
+                                />
+                                <textarea
+                                    name="message"
+                                    class="message form__input"
+                                    placeholder="message"
+                                ></textarea>
+                                <button
+                                    type="submit"
+                                    class="form__submit purple-btn"
+                                >
+                                    send message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute--bottom-left picture-beside-form">
+                    <img src="img/crnac4.png" alt="" />
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer__container">
+                    <div class="footer__left">
+                        <div class="footer__left__column">
+                            <h3
+                                class="footer__subtitle footer__subtitle--underline"
+                            >
+                                About
+                            </h3>
+                            <ul class="footer__nav-list">
+                                <li><a href="/#">history</a></li>
+                                <li><a href="/#">our team</a></li>
+                                <li><a href="/#">mission statement</a></li>
+                                <li><a href="/#">terms &amp; conditions</a></li>
+                                <li><a href="/#">privacy policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__left__column">
+                            <h3
+                                class="footer__subtitle footer__subtitle--underline"
+                            >
+                                What we do
+                            </h3>
+                            <ul class="footer__nav-list">
+                                <li><a href="/#">news and stories</a></li>
+                                <li><a href="/#">publications</a></li>
+                                <li><a href="/#">take action</a></li>
+                                <li><a href="/#">recommendations</a></li>
+                                <li><a href="/#">help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__right">
+                        <h3 class="footer__subtitle">
+                            Sign Up To Receive <br />
+                            Our Newsletter
+                        </h3>
+                        <div class="footer__sign-up-container">
+                            <input
+                                type="email"
+                                name="email"
+                                class="email footer__input"
+                                placeholder="Enter youe email"
+                            />
+                            <button class="white-btn">sign up</button>
+                        </div>
+                        <div class="footer__socials">
+                            <span>Follow us!</span>
+                            <div class="footer__social-btns">
+                                <a href="/#" class="social-btn">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="/#" class="social-btn">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="/#" class="social-btn">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

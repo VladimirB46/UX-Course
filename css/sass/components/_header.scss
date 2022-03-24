@@ -1,0 +1,121 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $darkGrey;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: $headerHeight;
+    padding-top: $headerHeight - $headerShrinkedHeight;
+    z-index: 100;
+    .wrapper {
+        @include flexSpaceBetween();
+    }
+}
+.header__logo {
+    display: block;
+    width: 70px;
+}
+.header__nav {
+    @include respond-to(media-small-large) {
+        display: none;
+    }
+    ul {
+        display: flex;
+        column-gap: 30px;
+        a {
+            display: block;
+            text-decoration: none;
+            height: $headerShrinkedHeight;
+            line-height: $headerShrinkedHeight;
+            padding: 0 2em;
+            span {
+                text-transform: uppercase;
+                font-family: $oswald;
+                font-size: 18px;
+                font-weight: 600;
+                position: relative;
+                display: block;
+                height: 100%;
+            }
+            &:hover {
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+        a.active {
+            span {
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 3px;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    background: $textColor;
+                }
+            }
+        }
+    }
+}
+.header__right {
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+    @include respond-to(media-medium) {
+        column-gap: 30px;
+    }
+    @include respond-to(media-extra-small) {
+        column-gap: 20px;
+    }
+    .header__profile-photo {
+        width: 45px;
+        height: 45px;
+        @include circle;
+        border: solid 2px $white;
+    }
+    .header__menu-btn {
+        position: relative;
+        @include flexCenter();
+        flex-direction: column;
+        background: none;
+        border: none;
+        width: 60px;
+        height: 40px;
+
+        // @include respond-to(media-extra-small) {
+        //     width: 50px;
+        // }
+        span {
+            display: block;
+            width: 80%;
+            height: 4px;
+            background: $textColor;
+        }
+        span:nth-of-type(1) {
+            position: absolute;
+            transform: translateY(-12px);
+        }
+        span:nth-of-type(3) {
+            position: absolute;
+            transform: translateY(12px);
+        }
+    }
+    .header__profile-photo,
+    .show-login-btn {
+        @include respond-to(media-extra-small) {
+            display: none;
+        }
+    }
+    .header__menu-btn.open {
+        span:nth-of-type(1) {
+            transform: rotate(40deg);
+        }
+        span:nth-of-type(2) {
+            opacity: 0;
+        }
+        span:nth-of-type(3) {
+            transform: rotate(-40deg);
+        }
+    }
+}

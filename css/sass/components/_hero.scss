@@ -1,0 +1,115 @@
+.hero {
+    position: relative;
+    box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.3);
+    .wrapper {
+        min-height: 100vh;
+        padding-top: $headerHeight;
+        @include flexCenter();
+        align-items: flex-end;
+
+        @include respond-to(media-small-medium) {
+            align-items: center;
+        }
+    }
+}
+.hero__content {
+    width: 100%;
+    @include flexCenter();
+
+    @include respond-to(media-small-medium) {
+        justify-content: flex-start;
+    }
+    .hero__left {
+        display: flex;
+        column-gap: 15px;
+        flex-shrink: 0;
+        max-width: 295px;
+        width: 100%;
+
+        @include respond-to(media-medium-large) {
+            display: none;
+        }
+        .cube {
+            margin-top: 8px;
+        }
+        p {
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+    }
+    .hero__right {
+        max-width: 295px;
+        .hero__title {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 0.5em;
+            line-height: 1.6;
+        }
+        p {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.6;
+            padding-bottom: 2em;
+        }
+    }
+}
+.hero__center {
+    max-width: 540px;
+    width: 100%;
+    @include flexCenter();
+    position: relative;
+    z-index: 1;
+    padding-top: 30px;
+
+    @include respond-to(media-large-medium) {
+        padding-right: 20px;
+    }
+
+    @include respond-to(media-small-medium) {
+        display: none;
+    }
+    &::before {
+        content: "";
+        background: $blue;
+        width: 375px;
+        height: 375px;
+        border-radius: 50%;
+        position: absolute;
+        @include positionCenter();
+        z-index: -1;
+
+        @include respond-to(media-large-medium) {
+            display: none;
+        }
+    }
+}
+.hero__absolute-right {
+    position: absolute;
+    right: 0;
+    bottom: 485px;
+    border: solid 3px $white;
+    border-right: none;
+    padding: 25px 55px 25px 35px;
+
+    @include respond-to(media-large) {
+        display: none;
+    }
+}
+.hero__absolute-left {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include respond-to(media-large) {
+        display: none;
+    }
+
+    .hero__absolute-left__text-sideways {
+        font-size: 43px;
+        text-transform: uppercase;
+    }
+}

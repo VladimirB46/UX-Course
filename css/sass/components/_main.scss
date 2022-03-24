@@ -1,0 +1,216 @@
+main {
+    background: $darkGrey;
+}
+.achievement-cards-container {
+    @include flexSpaceAround();
+    flex-wrap: wrap;
+    row-gap: 35px;
+    column-gap: 50px;
+
+    @include respond-to(media-extra-small) {
+        justify-content: flex-start;
+    }
+}
+.achievement-card {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    .achievement-card__left {
+        span {
+            font-family: $oswald;
+            font-size: 54px;
+            font-weight: 500;
+            line-height: 1;
+        }
+    }
+    .achievement-card__right {
+        span {
+            display: block;
+            font-size: 22px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        span:nth-of-type(1) {
+            padding-bottom: 0.1em;
+        }
+    }
+}
+.title-and-oval-behind {
+    margin: 0 auto;
+    position: relative;
+    padding: 100px 0;
+
+    @include respond-to(media-large-medium) {
+        padding: 50px 0;
+    }
+
+    @include respond-to(media-extra-small) {
+        padding: 20px 0;
+    }
+    .title--big {
+        span {
+            display: block;
+        }
+    }
+    .oval-behind {
+        position: absolute;
+        @include positionCenter();
+        max-width: 837px;
+        width: 100%;
+
+        @include respond-to(media-large-medium) {
+            max-width: 400px;
+        }
+    }
+}
+.texts-and-arrow {
+    @include flexSpaceBetween();
+    align-items: flex-start;
+    padding: 30px 60px 0;
+
+    @include respond-to(media-large-medium) {
+        padding: 30px 30px 0;
+    }
+
+    @include respond-to(media-extra-small) {
+        padding: 20px 20px 0;
+    }
+    .arrow-down {
+        @include respond-to(media-large-medium) {
+            max-width: 15px;
+        }
+    }
+}
+.title-and-badge-container {
+    @include flexSpaceBetween();
+    align-items: flex-end;
+    .edition-badge {
+        transform: translateY(15px);
+
+        @include respond-to(media-small) {
+            display: none;
+        }
+        .white-cube-before {
+            position: relative;
+            &::before {
+                top: 50%;
+                left: -30px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+.text-and-image--left,
+.text-and-image--right {
+    p {
+        padding-bottom: 3em;
+    }
+}
+.text-rows-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    padding: 0 0 50px 0;
+    row-gap: 40px;
+    .text-row {
+        @include flexSpaceBetween;
+        .purple-cube-before {
+            padding-left: 25px;
+            line-height: 1;
+        }
+    }
+}
+.text--multiple-rows {
+    .title--big {
+        line-height: 1;
+    }
+}
+.oval--top-right,
+.oval--top-left {
+    @include respond-to(media-large) {
+        display: none;
+    }
+}
+.picture-beside-form {
+    @include respond-to(media-medium-large) {
+        display: none;
+    }
+}
+.form-flex-container {
+    display: flex;
+    justify-content: flex-end;
+    @include respond-to(media-medium-large) {
+        justify-content: center;
+    }
+}
+.form-container {
+    max-width: 515px;
+    width: 100%;
+}
+.form__title {
+    text-align: center;
+    font-size: 47px;
+    padding-bottom: 0.3em;
+
+    @include respond-to(media-small) {
+        font-size: 40px;
+    }
+
+    @include respond-to(media-extra-small) {
+        font-size: 35px;
+    }
+    span {
+        display: block;
+        line-height: 1;
+    }
+    span:nth-of-type(1) {
+        text-transform: uppercase;
+        padding-bottom: 0.1em;
+    }
+    span:nth-of-type(2) {
+        color: $blue;
+        font-weight: 400;
+    }
+}
+.form__text {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 0 auto;
+    padding-bottom: 4em;
+
+    @include respond-to(media-small) {
+        padding-bottom: 2em;
+    }
+}
+.form {
+    @include flexColumn;
+    position: relative;
+    z-index: 5;
+    &__input {
+        @include inputSize;
+        margin-bottom: 55px;
+        border: solid 3px $blue;
+
+        @include respond-to(media-small) {
+            margin-bottom: 30px;
+        }
+
+        @include respond-to(media-extra-small) {
+            margin-bottom: 20px;
+        }
+        &::placeholder {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        &:focus {
+            border: solid 3px $darkBlue;
+        }
+    }
+    textarea {
+        height: 180px;
+        margin-bottom: 80px;
+    }
+}

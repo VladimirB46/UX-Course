@@ -1,0 +1,58 @@
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flexSpaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin positionCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin btnSize {
+    font-family: $oswald;
+    font-size: 17px;
+    font-weight: 500;
+    width: fit-content;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 0 1.5em;
+    line-height: 2.8em;
+    border: none;
+}
+@mixin inputSize {
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 17px;
+    padding: 1em;
+}
+@mixin modalClosed {
+    position: fixed;
+    top: calc(50% + 35px);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+}
+@mixin modalOpen {
+    transform: translate(-50%, -50%) scale(1);
+}
+@mixin circle {
+    border-radius: 50%;
+    overflow: hidden;
+}

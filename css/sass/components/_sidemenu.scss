@@ -1,0 +1,87 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 75;
+    width: 300px;
+    transform: translateX(100%);
+    height: 100vh;
+    padding-top: $headerHeight;
+    padding-bottom: 3px;
+    background: $darkerGrey;
+    @include flexSpaceBetween;
+    align-items: stretch;
+    flex-direction: column;
+    overflow-y: auto;
+    &__top__container {
+        @include flexColumn;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        border-bottom: solid 3px rgba(0, 0, 0, 0.5);
+    }
+    &__profile-picture {
+        width: 90px;
+        height: 90px;
+        @include circle;
+        border: solid 4px $white;
+    }
+    &__bottom {
+        border-top: solid 3px rgba(0, 0, 0, 0.5);
+    }
+    &__text--normal {
+        font-weight: 500;
+        padding-top: 0.3em;
+        padding-bottom: 0.5em;
+        font-size: 23px;
+    }
+    &__nav {
+        display: none;
+        overflow-y: auto;
+        padding-bottom: 0.5em;
+
+        @include respond-to(media-small-large) {
+            display: block;
+        }
+
+        ul {
+            a {
+                display: block;
+                text-decoration: none;
+                line-height: 2em;
+                padding: 0.5em 1em;
+                span {
+                    text-transform: uppercase;
+                    font-family: $oswald;
+                    font-size: 20px;
+                    font-weight: 600;
+                    position: relative;
+                    display: block;
+                    height: 100%;
+                    width: fit-content;
+                    letter-spacing: 2px;
+                }
+                &:hover {
+                    background: rgba(0, 0, 0, 0.5);
+                }
+            }
+            a.active {
+                span {
+                    &::before {
+                        content: "";
+                        display: block;
+                        height: 3px;
+                        width: 100%;
+                        left: 0;
+                        bottom: 4px;
+                        position: absolute;
+                        background: $textColor;
+                    }
+                }
+            }
+        }
+    }
+}
+.side-menu.open {
+    transform: translateX(0);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.8);
+}

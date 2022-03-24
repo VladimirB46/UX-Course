@@ -1,0 +1,140 @@
+button {
+    outline: none;
+    cursor: pointer;
+}
+.white-btn--small {
+    @include btnSize;
+    line-height: 2em;
+    padding: 0 1.5em;
+    color: $darkGrey;
+    background: $textColor;
+    &:hover {
+        background: #bbbbbb;
+    }
+}
+.purple-btn {
+    @include btnSize;
+    color: $textColor;
+    background: $blue;
+    &:hover {
+        background: $darkBlue;
+    }
+}
+.purple-btn--wide {
+    line-height: 2.4em;
+    letter-spacing: 2px;
+}
+.white-btn {
+    @include btnSize;
+    color: $blue;
+    background: $textColor;
+    &:hover {
+        background: #bbbbbb;
+    }
+}
+.transparent-btn {
+    @include btnSize;
+    color: $textColor;
+    background: none;
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+.transparent-btn--wide {
+    width: 100%;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+.rounded-purple-btn {
+    @include btnSize;
+    color: $blue;
+    border: solid $btnBorderWidth $blue;
+    background: $darkGrey;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 2.5em;
+    border-radius: 1.5em;
+    &:hover {
+        background: $darkBlue;
+        background: $blue;
+        color: $textColor;
+    }
+}
+.buttons-container {
+    display: flex;
+    column-gap: 5px;
+}
+.text-and-arrow-btn {
+    @include flexCenter;
+    column-gap: 60px;
+    text-decoration: none;
+    padding: 0 1.5em;
+    height: 60px;
+    border-radius: 30px;
+
+    @include respond-to(media-small) {
+        column-gap: 35px;
+    }
+
+    @include respond-to(media-extra-small) {
+        column-gap: 20px;
+    }
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    span {
+        line-height: 1;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+}
+.social-btn {
+    display: block;
+    height: 65px;
+    width: 65px;
+    text-decoration: none;
+    border-radius: 50%;
+    @include flexCenter;
+    background: $white;
+
+    @include respond-to(media-extra-small) {
+        width: 55px;
+        height: 55px;
+    }
+    &:hover {
+        background: #e0e0e0;
+    }
+    i {
+        color: $blue;
+        font-size: 25px;
+
+        @include respond-to(media-extra-small) {
+            font-size: 22px;
+        }
+    }
+}
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    @include circle;
+    @include flexCenter;
+    border: none;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 50;
+    display: none;
+    cursor: pointer;
+    i {
+        font-size: 45px;
+    }
+    &:hover {
+        i {
+            color: $blue;
+        }
+    }
+}

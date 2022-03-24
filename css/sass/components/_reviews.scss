@@ -1,0 +1,118 @@
+.reviews-slider {
+    padding-top: 70px;
+
+    @include respond-to(media-large-medium) {
+        padding-top: 40px;
+    }
+    div {
+        transition: none;
+    }
+}
+.review-slide {
+    text-align: center;
+    &__content {
+        @include flexColumn;
+        max-width: 310px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    &__picture {
+        width: 175px;
+        height: 175px;
+        border-radius: 50%;
+        border: 3px solid $blue;
+        overflow: hidden;
+    }
+    &__name {
+        font-size: 19px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $lightGrey;
+        padding: 1em 0 1.5em;
+    }
+    &__rating {
+        @include flexCenter;
+        column-gap: 10px;
+        padding-bottom: 25px;
+        .star {
+            color: $lightGrey;
+        }
+    }
+    &__text {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 2;
+        &__quotation-start,
+        &__quotation-end {
+            color: $blue;
+            font-size: 3.5em;
+            line-height: 0;
+            position: relative;
+        }
+        &__quotation-start {
+            bottom: -0.3em;
+        }
+        &__quotation-end {
+            bottom: -0.75em;
+        }
+    }
+}
+.stars--1 {
+    .star:nth-child(-n + 1) {
+        color: $blue;
+    }
+}
+.stars--2 {
+    .star:nth-child(-n + 2) {
+        color: $blue;
+    }
+}
+.stars--3 {
+    .star:nth-child(-n + 3) {
+        color: $blue;
+    }
+}
+.stars--4 {
+    .star:nth-child(-n + 4) {
+        color: $blue;
+    }
+}
+.stars--5 {
+    .star:nth-child(-n + 5) {
+        color: $blue;
+    }
+}
+.review-slider-arrows {
+    @include flexCenter;
+    column-gap: 100px;
+    padding-top: 70px;
+
+    @include respond-to(media-large-medium) {
+        padding-top: 30px;
+    }
+
+    @include respond-to(media-extra-small) {
+        width: 100%;
+        column-gap: 0;
+        justify-content: space-between;
+    }
+    .slider-arrow {
+        background: none;
+        border: none;
+        padding: 5px 10px;
+        &:hover {
+            .slider-arrow-path {
+                stroke: $blue;
+            }
+        }
+    }
+    svg {
+        width: 80px;
+    }
+    .slider-arrow-path {
+        fill: none;
+        stroke: $textColor;
+        stroke-width: 3px;
+    }
+}

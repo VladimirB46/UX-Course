@@ -1,0 +1,154 @@
+* {
+    color: $textColor;
+    font-family: "Krub", sans-serif;
+}
+.text--bold {
+    font-weight: 700;
+}
+.text--humongous {
+    font-size: 131px;
+}
+.text--purple {
+    color: $blue;
+}
+.text--regular {
+    font-weight: 400;
+}
+.text--center {
+    text-align: center;
+}
+.text--uppercase {
+    text-transform: uppercase;
+}
+.text--small {
+    font-size: 13px;
+    line-height: 1.7;
+}
+.text--48px {
+    font-size: 48px;
+
+    @include respond-to(media-large-medium) {
+        font-size: 30px;
+    }
+
+    @include respond-to(media-extra-small) {
+        font-size: 25px;
+    }
+}
+.text--38px {
+    font-size: 38px;
+
+    @include respond-to(media-large-medium) {
+        font-size: 25px;
+    }
+}
+.text--dark-grey {
+    color: $textDarkGrey;
+}
+.title--58px {
+    font-size: 58px;
+    padding-bottom: 0.3em;
+
+    @include respond-to(media-large-medium) {
+        font-size: 40px;
+    }
+}
+.title--big {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 83px;
+    line-height: 1.15;
+
+    @include respond-to(media-large-medium) {
+        font-size: 50px;
+    }
+
+    @include respond-to(media-extra-small) {
+        font-size: 40px;
+    }
+}
+.title--huge {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 115px;
+    line-height: 1.15;
+
+    @include respond-to(media-large-medium) {
+        font-size: 60px;
+    }
+
+    @include respond-to(media-extra-small) {
+        font-size: 45px;
+    }
+}
+.text--multiple-rows {
+    span {
+        display: block;
+    }
+}
+.sideways-text--left {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+    @include respond-to(media-medium-large) {
+        display: none;
+    }
+}
+.sideways-text--right {
+    writing-mode: vertical-lr;
+
+    @include respond-to(media-medium-large) {
+        display: none;
+    }
+}
+.absolute-text--top-left,
+.absolute-text--top-right {
+    position: absolute;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.absolute-text--top-left {
+    left: 60px;
+    top: 130px;
+}
+.absolute-text--top-right {
+    right: 60px;
+    top: 160px;
+}
+.white-cube-before {
+    line-height: 1;
+    &::before {
+        content: "";
+        display: block;
+        height: 0.8em;
+        width: 0.8em;
+        background: $textColor;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.purple-cube-before {
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        height: 0.8em;
+        width: 0.8em;
+        background: $blue;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.side-text--big {
+    font-size: 100px;
+    font-weight: 700;
+    color: $textDarkGrey;
+    text-transform: uppercase;
+    line-height: 1;
+    transform: translateX(15%) rotate(180deg);
+}

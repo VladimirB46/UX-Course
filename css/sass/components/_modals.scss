@@ -1,0 +1,256 @@
+.login-reg-modal.open {
+    @include modalOpen;
+}
+.login-reg-modal {
+    @include modalClosed;
+    z-index: 80;
+    background: $darkerGrey;
+    padding: 30px 45px;
+    max-width: 465px;
+    width: calc(100% - 15px);
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 70px);
+
+    @include respond-to(media-small) {
+        padding: 20px 35px;
+    }
+
+    @include respond-to(media-extra-small) {
+        padding: 20px;
+    }
+    &__title {
+        font-size: 32px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    &__label {
+        text-align: left;
+        display: block;
+        font-weight: 500;
+        padding-bottom: 0.2em;
+        margin-top: 0.8em;
+    }
+    &__input {
+        @include inputSize;
+        border: solid 2px $textColor;
+        width: 100%;
+        padding: 0.7em 1em;
+    }
+    &__error-msg {
+        color: $red;
+        font-size: 16px;
+        margin-top: 0.1em;
+        text-align: center;
+    }
+    .login-error-msg {
+        font-size: 20px;
+    }
+    .rounded-purple-btn {
+        margin-top: 1.5em;
+        margin-bottom: 0.2em;
+        text-align: center;
+        display: block;
+    }
+    &__success-icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: solid 4px $blue;
+        @include flexCenter;
+        margin-bottom: 1em;
+        .checkmark-svg {
+            width: 65%;
+            transform: translateX(-4%);
+        }
+        .checkmark-path {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 8px;
+            stroke: $blue;
+        }
+    }
+    &__success-messsage {
+        font-size: 26px;
+        span {
+            color: $blue;
+        }
+    }
+    &__close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        @include flexCenter;
+        border-radius: 5px;
+        &:hover {
+            background: $black;
+        }
+        span {
+            height: 3px;
+            width: 22px;
+            display: block;
+            background: $lightGrey;
+            transform: rotate(45deg);
+        }
+        span:nth-of-type(1) {
+            transform: rotate(-45deg);
+            position: absolute;
+        }
+    }
+    &__buttons-container {
+        @include flexCenter;
+        padding-top: 1em;
+        column-gap: 0.5em;
+    }
+}
+.show-registration-container {
+    padding-top: 0.8em;
+    @include flexCenter;
+    span {
+        font-size: 20px;
+
+        @include respond-to(media-extra-small) {
+            font-size: 16px;
+        }
+    }
+    button {
+        font-size: 20px;
+        margin-left: 0.3em;
+        background: none;
+        outline: none;
+        border: none;
+        color: $blue;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.login-reg-modal__content--login,
+.login-reg-modal__content--register,
+.login-reg-modal__content--success,
+.login-reg-modal__content--logout {
+    display: none;
+}
+.login-reg-modal--login {
+    .login-reg-modal__content--login {
+        display: block;
+    }
+}
+.login-reg-modal--register {
+    .login-reg-modal__content--register {
+        display: block;
+    }
+}
+.login-reg-modal--success {
+    .login-reg-modal__content--success {
+        @include flexColumn;
+    }
+}
+.login-reg-modal--logout {
+    .login-reg-modal__content--logout {
+        @include flexColumn;
+    }
+}
+.overlay {
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 70;
+    transition: width 0s, height 0s, background-color 0.3s;
+}
+.overlay.open {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.password-strength-container {
+    display: flex;
+    align-items: center;
+    column-gap: 0.4em;
+    margin-top: 0.25em;
+    height: 1.2em;
+    .password-strength {
+        line-height: 1.2em;
+        text-transform: capitalize;
+        font-size: 1em;
+    }
+}
+.passowrd-strength-icons {
+    display: flex;
+    span {
+        display: block;
+        background: #ececec;
+        height: 10px;
+        width: 35px;
+        border-radius: 5px;
+        box-shadow: inset -3px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+}
+.passowrd-strength-icons.very-weak {
+    span:nth-of-type(-n + 1) {
+        background: $red;
+    }
+}
+.passowrd-strength-icons.weak {
+    span:nth-of-type(-n + 2) {
+        background: $orange;
+    }
+}
+.passowrd-strength-icons.okay {
+    span:nth-of-type(-n + 3) {
+        background: $yellow;
+    }
+}
+.passowrd-strength-icons.good {
+    span:nth-of-type(-n + 4) {
+        background: $lightGreen;
+    }
+}
+.passowrd-strength-icons.very-good {
+    span:nth-of-type(-n + 5) {
+        background: $darkGreen;
+    }
+}
+.password-and-show-btn {
+    display: flex;
+    .password {
+        border-right: transparent;
+    }
+    .show-passowrd-btn.invalid {
+        border: solid 2px $red;
+        border-left: transparent;
+    }
+    .show-passowrd-btn {
+        width: 50px;
+        @include flexCenter;
+        border: solid 2px $textColor;
+        border-left: transparent;
+        background: none;
+        outline: none;
+        .icon--hide {
+            display: none;
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+    .show-passowrd-btn.shown {
+        .icon--hide {
+            display: block;
+        }
+        .icon--show {
+            display: none;
+        }
+    }
+}
+.invalid {
+    border: solid 2px $red;
+}

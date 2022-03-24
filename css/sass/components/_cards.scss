@@ -1,0 +1,67 @@
+.course-cards-container {
+    display: grid;
+    justify-items: center;
+    padding: 130px 0 60px;
+    row-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+
+    @include respond-to(media-medium-large) {
+        padding: 60px 0 60px;
+    }
+
+    @include respond-to(media-extra-small) {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px 0 30px;
+    }
+}
+.course-card {
+    max-width: 295px;
+    width: 100%;
+    border: solid 4px #fff;
+    position: relative;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    &__content {
+        @include flexColumn();
+        justify-content: space-between;
+        flex-grow: 1;
+        text-align: center;
+        padding: 20px 30px 30px;
+    }
+    &__number {
+        background: #fff;
+        width: 45px;
+        height: 45px;
+        @include flexCenter();
+        span {
+            color: $darkGrey;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    &__title {
+        font-size: 33px;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 1em;
+        &::after {
+            content: "";
+            display: block;
+            height: 3px;
+            background: $blue;
+            width: 55px;
+            position: absolute;
+            bottom: 0.5em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__text {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.6;
+        padding-bottom: 1.5em;
+    }
+}
