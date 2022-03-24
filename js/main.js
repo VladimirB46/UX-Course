@@ -260,8 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let user1 = new User('username1', 'password1');
     user1.add();
-    // console.log(users);
-    // testpass1
     
 
     // login
@@ -307,7 +305,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        loginError.innerHTML = 'Username and password do not match!';
+        if (nameValid === true && passwordValid === true) {
+            loginError.innerHTML = 'Username and password do not match!';
+        }
     }
 
     // login name no space and error reset 
