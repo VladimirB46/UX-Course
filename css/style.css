@@ -1402,6 +1402,7 @@ main {
   outline: none;
   font-size: 17px;
   padding: 1em;
+  border-radius: 0;
   margin-bottom: 55px;
   border: solid 3px #00b3ff;
 }
@@ -1558,11 +1559,14 @@ main {
 
 .reviews-slider {
   padding-top: 70px;
+  max-height: 500px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 800px) {
   .reviews-slider {
     padding-top: 40px;
+    max-height: 470px;
   }
 }
 
@@ -1904,6 +1908,7 @@ main {
   outline: none;
   font-size: 17px;
   padding: 1em;
+  border-radius: 0;
   border: solid 3px #fff;
   width: 100%;
 }
@@ -2033,6 +2038,7 @@ main {
   outline: none;
   font-size: 17px;
   padding: 1em;
+  border-radius: 0;
   border: solid 2px #fff;
   width: 100%;
   padding: 0.7em 1em;
@@ -2442,7 +2448,6 @@ main {
   font-weight: 600;
   position: relative;
   display: block;
-  height: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
